@@ -106,3 +106,31 @@ no se encuentra mas un archivo denominado worker.java
 ------------------------------------------------------------------------------------------------
  
 El codigo que se encuentra en example-voting-app\result\server.j muestra los valores de la siguiente manera: establece un servidor Node.js con Express y Socket.IO que se conecta a una base de datos PostgreSQL, obtiene los votos almacenados en la base de datos y los envía en tiempo real a través de Socket.IO a los clientes conectados. La página HTML mostrada a los clientes se encuentra en la carpeta views y utiliza JavaScript para mostrar los votos en tiempo real.
+
+---------------------------------------------------------------------------------------------
+Documento de Arquitectura: Ejemplo de Aplicación de Votación con Docker
+
+Introducción
+Este documento describe la arquitectura de una aplicación de votación utilizando contenedores Docker, basada en el repositorio "dockersamples/example-voting-app". La aplicación permite a los usuarios emitir votos y visualizar los resultados de la votación en tiempo real.
+
+Objetivos
+El objetivo principal de este sistema es proporcionar un ejemplo práctico de cómo construir y desplegar una aplicación utilizando contenedores Docker. La arquitectura se centra en la escalabilidad, la modularidad y la independencia de los componentes.
+
+Arquitectura General
+La aplicación de votación consta de varios componentes interconectados, cada uno encapsulado en un contenedor Docker independiente. Estos componentes son:
+
+Voting App (vote/): Permite a los usuarios emitir votos por una de las dos opciones. Los votos se almacenan en la base de datos.
+
+Result App (result/): Muestra los resultados de la votación en tiempo real, obteniendo los datos de la base de datos.
+
+Worker (worker/): Procesa los votos y actualiza los resultados en la base de datos. Se comunica con la aplicación de votación y la aplicación de resultados.
+
+finalmente realizo un diagrama de bloques y de secuencias
+![Alt text](10.png)
+
+Interacción entre Componentes
+El usuario interactúa con la aplicación de votación a través de una interfaz web. Al emitir un voto, la aplicación de votación envía una solicitud al componente Worker.
+
+El componente Worker recibe y procesa el voto, luego actualiza la base de datos con el nuevo resultado.
+
+La aplicación de resultados consulta periódicamente la base de datos para obtener los resultados actualizados y los muestra en la interfaz web.
