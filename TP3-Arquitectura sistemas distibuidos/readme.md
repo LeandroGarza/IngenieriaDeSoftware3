@@ -128,6 +128,9 @@ Worker (worker/): Procesa los votos y actualiza los resultados en la base de dat
 finalmente realizo un diagrama de bloques y de secuencias
 ![Alt text](10.png)
 
+y otra opcion es la siguiente ya que no estoy muy decidido
+![Alt text](11.png)
+
 Interacción entre Componentes
 El usuario interactúa con la aplicación de votación a través de una interfaz web. Al emitir un voto, la aplicación de votación envía una solicitud al componente Worker.
 
