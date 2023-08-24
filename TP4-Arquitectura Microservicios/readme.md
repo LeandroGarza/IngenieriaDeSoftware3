@@ -18,6 +18,8 @@ y podemos llenar el carrito para posteriormente pasar al pago
 ## 2 Investigacion de los componentes
 
 1
+Como hemos visto en clase, una arquitectura de microservicios (como lo es la aplicación web que hemos levantando sobre el localhost) consta de una colección de servicios autónomos y pequeños. Estos servicios son independientes entre sí.
+
 vemos el siguiente container en nuestro docker desktop
 ![Alt text](5.png)
 
@@ -47,6 +49,8 @@ Descubrimiento de servicios: Encontrar y conectarse a los diferentes servicios p
 
 -----------------------------------------------------------------------------------------------------
 4
+El contenedor Front-end hace las veces de API Gateway
+
 en el repositorio "microservices-demo/edge-router.git" es el que hace las veces de API Gateway. El término "edge router" se refiere a un componente que actúa como punto de entrada para las solicitudes externas hacia los diferentes microservicios, proporcionando funciones de enrutamiento, autenticación, autorización, balanceo de carga, entre otros. En este caso, el contenedor relacionado con el repositorio "edge-router.git" está configurado como el API Gateway para este sistema de microservicios.
 
 ------------------------------------------------------------------------------------------------------
@@ -55,11 +59,12 @@ En el sistema de microservicios, cada uno de los comandos curl se comunica con u
 
 curl http://localhost/customers:
 El servicio que procesa la operación depende de la arquitectura específica del sistema. En general, este comando podría estar siendo manejado por un microservicio relacionado con la gestión de clientes.
+Vemos el json que nos tira sobre los distintos customers:
 ![Alt text](7.png)
 
 7
 curl http://localhost/catalogue:
-Este comando se comunica con un microservicio responsable de gestionar el catálogo de productos.
+Este comando se comunica con un microservicio responsable de gestionar el catálogo de productos. Con el siguiente comando vemos un json del catalogo del negocio.
 ![Alt text](8.png)
 
 curl http://localhost/tags:
@@ -75,9 +80,10 @@ En cuanto a la persistencia de datos y la comunicación entre microservicios:
 Persistencia de Datos: Cada microservicio puede utilizar su propio sistema de persistencia de datos. Puede haber bases de datos independientes para cada servicio o un servicio podría utilizar un almacén de datos compartido, como una base de datos relacional o no relacional.
 
 9
-el 'queue master'
+el 'queue master'.
+
 Procesamiento de Cola de Mensajes: El componente encargado del procesamiento de la cola de mensajes podría ser un servicio independiente o un módulo dentro de un microservicio específico. Suele utilizarse una herramienta de cola de mensajes como RabbitMQ, Apache Kafka o similar para administrar la comunicación asíncrona entre microservicios.
 
-10
-Se comunican entre sí utilizando REST
+10_ 
+Se comunican entre sí utilizando REST.
 Interfaz de Comunicación: Los microservicios generalmente se comunican entre sí utilizando una variedad de métodos, como HTTP/HTTPS (RESTful API), gRPC, AMQP (Advanced Message Queuing Protocol), etc. El método exacto dependerá de la arquitectura y las tecnologías elegidas en el sistema.
