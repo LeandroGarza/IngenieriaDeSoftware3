@@ -75,9 +75,7 @@ Este comando se comunica con un microservicio que maneja las etiquetas o categor
 8 
 Cada servicio que requiere persistencia de datos (ej. user) tiene un container acompañante, en el cual persisten su datos (en el ejemplo dado, user-db_1). En este ejemplo se utiliza principalmente mongodb
 
-En cuanto a la persistencia de datos y la comunicación entre microservicios:
-
-Persistencia de Datos: Cada microservicio puede utilizar su propio sistema de persistencia de datos. Puede haber bases de datos independientes para cada servicio o un servicio podría utilizar un almacén de datos compartido, como una base de datos relacional o no relacional.
+ Cada microservicio puede utilizar su propio sistema de persistencia de datos. Puede haber bases de datos independientes para cada servicio o un servicio podría utilizar un almacén de datos compartido, como una base de datos relacional o no relacional.
 
 9
 el 'queue master'.
