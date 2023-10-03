@@ -110,4 +110,8 @@ lo que hice para que devuelva mas elementos es modificar la linea de codigo para
 
 ## 9 Capturar los unit test como parte del proceso CI/CD
 
-una vez que subimos todo a github
+una vez que subimos todo a github, podemos subirlo a docker hub mediante actions como hicimos la clase pasada.
+
+![Alt text](22.png)
+
+nos aparece en docker hub, y una vez que sucede esto, desde consola podemos tirar un pull para que nos aparezca de manera local.
