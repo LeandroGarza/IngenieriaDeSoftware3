@@ -58,4 +58,4 @@ Scenario('login incorrecto', ({ I }) => {
 y finalmente corremos el comando ng serve
 ![Alt text](12.png)
 
-finalmente corremos y ejecutamos los tests
+finalmente corremos y ejecutamos los tests como hicimos anteriormente
